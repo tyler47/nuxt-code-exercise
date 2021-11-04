@@ -1,0 +1,22 @@
+// main.scss is imported in nuxt.config.js and applies all styles
+// in this file globally
+
+@import 'custom-buefy.scss';
+
+h1, h2 {
+  color: #000;
+  font-weight: 900;
+}
+h1 {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+ 
+h2 {
+  font-size: 48px;
+  letter-spacing: -1px;
+  @include until($tablet) {
+    font-size: 36px;
+  }
+}
