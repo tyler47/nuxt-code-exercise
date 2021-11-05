@@ -44,6 +44,8 @@ export default {
     character: {}
   }),
   methods: {
+    // @TODO: move to centralized service 
+    // get string concat of all abilities 
     getAbilities(character) {
       if (!character.abilities) {
         return '';
@@ -55,6 +57,7 @@ export default {
         return abilityName.charAt(0).toUpperCase() + abilityName.slice(1);
       }).join(', ');
     },
+    // get string concat of all character types
     getTypes(character) {
       if (!character.types) {
         return '';
@@ -66,6 +69,7 @@ export default {
         return typeName.charAt(0).toUpperCase() + typeName.slice(1);
       }).join(', ');
     },
+    // get HP stat from json
     getHp(character) {
       if (!character.stats) {
         return '';
@@ -73,6 +77,7 @@ export default {
       var stat = character.stats.find(x => x.stat.name === 'hp');
       return stat?.base_stat;
     },
+    // get attack stat from json
     getAttack(character) {
       if (!character.stats) {
         return '';
@@ -80,6 +85,7 @@ export default {
       var stat = character.stats.find(x => x.stat.name === 'attack');
       return stat?.base_stat;
     },
+    // get defense stat
     getDefense(character) {
       if (!character.stats) {
         return '';
@@ -87,6 +93,7 @@ export default {
       var stat = character.stats.find(x => x.stat.name === 'defense');
       return stat?.base_stat;
     },
+    // Get Display image for character
     getPokeSprit(character) {
       if (!character.sprites) {
         return '';
@@ -100,8 +107,6 @@ export default {
     }
   },
 };
-
-
 </script>
 
 <style>
